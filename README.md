@@ -1,6 +1,9 @@
 # 50 First Tasks
 
-Support codebase to my article
+Support codebase to my article [50 FIRST TASKS]().
+
+> 👉 If you are looking for the **complete `copilot-instructions.md`** [just click here](./copilot-instructions.md).
+
 
 # Progress Branches
 
