@@ -11,9 +11,9 @@
 - **prettier** (^3.6.2) - Code formatter with consistent style
 
 ### TypeScript Support  
-- **typescript** (^5.8.3) - TypeScript compiler
-- **@types/node** (^24.0.13) - Node.js type definitions
-- **ts-node** (^10.9.2) - TypeScript execution environment for Node.js
+- **typescript** (^5.8.3) - TypeScript compiler with ES2020 target
+- **@types/node** (^24.0.13) - Node.js type definitions for development
+- **ts-node** (^10.9.2) - TypeScript execution environment for Node.js with watch mode support
 
 ### Git Hooks & Commit Management
 - **husky** (^9.1.7) - Git hooks management (pre-commit, commit-msg)
