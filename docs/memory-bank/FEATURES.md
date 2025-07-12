@@ -30,10 +30,26 @@
 - **Code Style Consistency** - Enforced through Prettier and ESLint with TypeScript integration
 
 ## Upcoming Features
-- Express.js API server setup
 - Hello World route implementation  
 - Production build and deployment configuration
+- Additional API endpoints and routing structure
 
 ## Application Features
 
-No application features yet - foundation setup complete, ready for Express.js implementation.
+### ✅ Express.js Web Server
+- **HTTP Server** - Express.js application running on configurable port (default 3000)
+- **Health Check Endpoint** - `/health` route providing server status, uptime, and timestamp
+- **CORS Support** - Cross-Origin Resource Sharing enabled for frontend integration
+- **Request Logging** - Comprehensive HTTP request logging for development debugging
+- **Environment Configuration** - dotenv support for flexible deployment settings
+
+### ✅ Middleware Stack
+- **JSON Body Parsing** - Built-in Express JSON parser for API requests
+- **URL Encoded Support** - Form data parsing with extended option enabled
+- **Error Handling** - Comprehensive error middleware with environment-aware responses
+- **404 Handling** - Proper not-found responses for undefined routes
+
+### ✅ Production-Ready Features  
+- **Graceful Shutdown** - Proper SIGTERM and SIGINT signal handling
+- **TypeScript Integration** - Full type safety across Express middleware and routes
+- **Hot Reload Development** - nodemon integration for seamless development workflow

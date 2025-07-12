@@ -22,7 +22,15 @@
 - **@commitlint/config-conventional** (^19.8.1) - Conventional commit rules
 - **commitizen** (^4.3.1) - Interactive commit message creation
 - **cz-conventional-changelog** (^3.3.0) - Conventional changelog format for commitizen
+- **nodemon** - Development utility for automatic server restart on file changes
+
+### Express & Web Framework Types
+- **@types/express** - TypeScript type definitions for Express.js
+- **@types/cors** - TypeScript type definitions for CORS middleware
 
 ## Runtime Dependencies
 
-No runtime dependencies yet - will be added with ExpressJS setup.
+### Web Framework & Middleware
+- **express** - Fast, unopinionated, minimalist web framework for Node.js
+- **cors** - Express middleware for enabling Cross-Origin Resource Sharing (CORS)
+- **dotenv** - Environment variable management from .env files

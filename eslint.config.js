@@ -31,7 +31,14 @@ export default [
     },
     rules: {
       'prettier/prettier': 'error',
-      '@typescript-eslint/no-unused-vars': 'error',
+      'no-unused-vars': 'off', // Disable base rule in favor of TypeScript version
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        { 
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_' 
+        }
+      ],
       '@typescript-eslint/explicit-function-return-type': 'warn',
       'no-console': 'warn',
     },
