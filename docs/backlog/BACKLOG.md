@@ -2,13 +2,14 @@
 
 # Current Task
 
-- [Setup ExpressJS](./setup-expressjs.md)
+- [Add hello world route](./add-hello-world-route.md)
 
 # Upcoming Tasks
 
-- [Add hello world route](./add-hello-world-route.md)
+No upcoming tasks currently.
 
 # Completed Tasks
 
 - ✅ [Init node project](./init-node-project.md) - **COMPLETED** ✨
 - ✅ [Setup TypeScript](./setup-typescript.md) - **COMPLETED** ✨
+- ✅ [Setup ExpressJS](./setup-expressjs.md) - **COMPLETED** ✨

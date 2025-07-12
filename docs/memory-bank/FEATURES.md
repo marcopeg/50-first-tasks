@@ -28,6 +28,7 @@
 - **Commit Message Validation** - Ensures conventional commit format
 - **TypeScript Type Checking** - Strict type validation with comprehensive error reporting
 - **Code Style Consistency** - Enforced through Prettier and ESLint with TypeScript integration
+- **Smart Linting** - ESLint configured to ignore underscore-prefixed unused parameters
 
 ## Upcoming Features
 - Hello World route implementation  

@@ -90,6 +90,7 @@ Install and configure ExpressJS framework for building REST APIs with TypeScript
 - ✅ Updated `DEPENDENCIES.md` with new runtime and dev dependencies
 - ✅ Updated `FEATURES.md` with Express capabilities and middleware stack
 - ✅ Documented server configuration and TypeScript integration
+- ✅ Optimized ESLint configuration for TypeScript patterns
 
 ## Task Completion ✨
 
@@ -104,10 +105,42 @@ Successfully implemented Express.js server with comprehensive TypeScript integra
 - ✅ **Health Monitoring** - `/health` endpoint for server status
 - ✅ **Graceful Operations** - Proper startup, shutdown, and error handling
 - ✅ **Environment Support** - dotenv configuration for flexible deployment
+- ✅ **Code Quality** - ESLint optimized for TypeScript patterns and unused parameters
 - ✅ **Documentation Updated** - Memory Bank files reflect current architecture
+
+**Server Endpoints:**
+- `GET /health` - Server health check with status, timestamp, and uptime
 
 **Next Step**: Ready for implementing Hello World route and additional API endpoints.
 
 ## Issues
 
-[[ annotate any issue here ]]
+### Linting Configuration Challenges
+
+**Issue 1: ts-node Watch Mode Compatibility**
+- **Problem**: Initial `npm run dev` script used `ts-node --watch` which is not supported
+- **Solution**: Replaced with `nodemon --exec ts-node src/index.ts` for proper hot-reload
+- **Lesson**: Always verify tool compatibility when combining TypeScript execution with watch modes
+
+**Issue 2: Express Wildcard Route Error**
+- **Problem**: Using `app.use('*', handler)` caused path-to-regexp parsing errors
+- **Solution**: Simplified to `app.use(handler)` for catch-all 404 handling
+- **Lesson**: Express route patterns must be carefully validated, especially wildcards
+
+**Issue 3: ESLint Unused Parameter Rules**
+- **Problem**: Express error handlers require 4-parameter signature, but `next` parameter often unused
+- **Error**: `'next' is defined but never used` from both base and TypeScript ESLint rules
+- **Initial Attempts**: 
+  - Tried ESLint disable comments (suppression approach)
+  - Tried underscore prefix `_next` but base rule still complained
+- **Root Cause**: Both `no-unused-vars` (base) and `@typescript-eslint/no-unused-vars` were active
+- **Final Solution**: 
+  - Disabled base `no-unused-vars` rule
+  - Configured TypeScript rule with `argsIgnorePattern: '^_'`
+  - Used `_next` parameter name following TypeScript conventions
+- **Lesson**: When using TypeScript ESLint, disable conflicting base rules and configure TypeScript-specific rules properly
+
+**Issue 4: Code Formatting Standards**
+- **Problem**: Multiple Prettier/ESLint formatting conflicts during development
+- **Solution**: Consistent application of formatting rules and proper ESLint configuration
+- **Lesson**: Establish linting rules early and test thoroughly with actual TypeScript patterns
