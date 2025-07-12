@@ -1,6 +1,8 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { enhancedLogging, logRouteMarker } from './middleware/logging';
+import { renderHomePage, HomePageData } from './templates/home';
 
 // Load environment variables
 dotenv.config();
@@ -14,11 +16,35 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Request logging middleware
-app.use((req, res, next) => {
-  // eslint-disable-next-line no-console
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
-  next();
+// Enhanced request logging middleware
+app.use(enhancedLogging);
+
+// Beautiful Hello World landing page
+app.get('/', logRouteMarker('Home Page'), (req, res) => {
+  const homeData: HomePageData = {
+    title: 'Express TypeScript Server',
+    serverInfo: {
+      uptime: process.uptime(),
+      timestamp: new Date().toISOString(),
+      nodeVersion: process.version,
+      environment: process.env.NODE_ENV || 'development',
+    },
+    endpoints: [
+      {
+        path: '/',
+        method: 'GET',
+        description: 'Beautiful hello world landing page',
+      },
+      {
+        path: '/health',
+        method: 'GET',
+        description: 'Server health check and status information',
+      },
+    ],
+  };
+
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  res.send(renderHomePage(homeData));
 });
 
 // Basic health check route
