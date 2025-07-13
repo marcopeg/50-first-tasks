@@ -1,6 +1,6 @@
 # 50 First Tasks
 
-Support codebase to my article [50 FIRST TASKS]().
+Support codebase to my article [50 FIRST TASKS](https://marcopeg.com/50-first-tasks/).
 
 > 👉 If you are looking for the **complete `copilot-instructions.md`** [just click here](./copilot-instructions.md).
 
@@ -11,56 +11,56 @@ The tutorial follows a **branch-by-branch** approach, in which new information a
 
 ## step01
 
+Basic Copilot instructions.
+
 ```bash
 git checkout step01
 ```
 
-Basic Copilot instructions.
-
 ## step02
+
+Init memory bank and source it to new chats.
 
 ```bash
 git checkout step02
 ```
 
-Init memory bank and source it to new chats.
-
 ## step03
+
+Add stories to the backlog.
 
 ```bash
 git checkout step03
 ```
 
-Add stories to the backlog.
-
 ## step04
+
+Implement Task: `Init node project`.
 
 ```bash
 git checkout step04
 ```
 
-Implement Task: `Init node project`.
-
 ## step05
+
+Implement Task: `Setup TypeScript`.
 
 ```bash
 git checkout step05
 ```
 
-Implement Task: `Setup TypeScript`.
-
 ## step06
+
+Implement Task: `Setup ExpressJS`.
 
 ```bash
 git checkout step06
 ```
 
-Implement Task: `Setup ExpressJS`.
-
 ## step07
+
+Implement Task: `Add Hello World route`.
 
 ```bash
 git checkout step07
 ```
-
-Implement Task: `Add Hello World route`.
